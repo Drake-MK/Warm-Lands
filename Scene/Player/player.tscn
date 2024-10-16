@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://bcjthxea34i3q"]
+
+[ext_resource type="PackedScene" uid="uid://ub1b005jifli" path="res://Game/Assets/free-magical-assassin/source/model.glb" id="1_o1kvd"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3cqmv"]
+
+[node name="Player" type="CharacterBody3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0399816, 0)
+shape = SubResource("CapsuleShape3D_3cqmv")
+
+[node name="Base" type="Node3D" parent="."]
+
+[node name="model" parent="Base" instance=ExtResource("1_o1kvd")]

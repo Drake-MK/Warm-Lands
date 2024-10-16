@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://b7tq5yusa3qns"]
+
+[ext_resource type="PackedScene" uid="uid://cqgaxj5ukqvli" path="res://Game/Assets/kurenai_asset/kurenai_asset/Assain.fbx" id="1_5axnr"]
+
+[node name="Root Scene" instance=ExtResource("1_5axnr")]

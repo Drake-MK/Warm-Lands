@@ -1,0 +1,53 @@
+[gd_scene load_steps=11 format=3 uid="uid://botdrqwiffmae"]
+
+[ext_resource type="Texture2D" uid="uid://dmuldpkk0waic" path="res://Game/Assets/textures/grids/Dark/texture_03.png" id="1_4xdun"]
+[ext_resource type="Texture2D" uid="uid://dgfc87vfilfo8" path="res://Game/Assets/textures/grids/Purple/texture_03.png" id="2_m7xpi"]
+[ext_resource type="Texture2D" uid="uid://d2m8qf54p78pp" path="res://Game/Assets/textures/grids/Orange/texture_03.png" id="2_xvhq3"]
+[ext_resource type="Texture2D" uid="uid://bejjp0rxsqeao" path="res://Game/Assets/textures/grids/Light/texture_03.png" id="3_5wykx"]
+
+[sub_resource type="Sky" id="Sky_6rx8g"]
+
+[sub_resource type="Environment" id="Environment_usvy4"]
+background_mode = 2
+sky = SubResource("Sky_6rx8g")
+tonemap_mode = 2
+sdfgi_bounce_feedback = 0.0
+glow_enabled = true
+fog_enabled = true
+fog_light_color = Color(0.483848, 0.587254, 0.783535, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n4lgc"]
+albedo_texture = ExtResource("1_4xdun")
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r4xtt"]
+albedo_texture = ExtResource("2_m7xpi")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yf753"]
+albedo_texture = ExtResource("3_5wykx")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fune3"]
+albedo_texture = ExtResource("2_xvhq3")
+
+[node name="Node3D" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_usvy4")
+
+[node name="Map" type="Node3D" parent="."]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Map"]
+material_override = SubResource("StandardMaterial3D_n4lgc")
+size = Vector3(100, 1, 100)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Map"]
+transform = Transform3D(3.47583, 0, 0, 0, -0.904243, 0, 0, 0, 1, 6.31934, 1.2125, 0.420074)
+material_override = SubResource("StandardMaterial3D_r4xtt")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.67927, 1.2125, 3.83716)
+material_override = SubResource("StandardMaterial3D_yf753")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Map"]
+transform = Transform3D(2.22585, 0, 0, 0, 3.26033, 0, 0, 0, 0.883064, -4.98309, 1.1094, 0.818173)
+material_override = SubResource("StandardMaterial3D_fune3")
